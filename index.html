@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try...Catch в JS с интерфейсом</title>
+</head>
+<body>
+
+  <form id="myForm">
+    <label for="inputNumber">Введите число:</label>
+    <input type="text" id="inputNumber" name="inputNumber">
+    <button type="button" onclick="processInput()">Обработать</button>
+  </form>
+  <p id="res"></p>
+
+  <script>
+    function processInput() {
+      try {
+        let inputValue = document.getElementById('inputNumber').value;
+        let number = parseInt(inputValue);
+
+        if (isNaN(number)) {
+          throw new Error('Введите возраст');
+        }
+
+        if (number == 0) {
+          throw new Error('Введите корректный возраст');
+        }
+
+        document.getElementById("res").innerHTML = number;
+      } catch (error) {
+
+        document.getElementById("res").innerHTML=error;
+      }
+
+    }
+    if (number == "") {
+        document.getElementById ("res").innerHTML=error;
+    }
+    else {
+        document.getElementById("res").innerHTML= number
+    }
+  </script>
+
+</body>
+</html>
